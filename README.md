@@ -24,7 +24,7 @@ To build a NWCommon project:
 To setup a new NWCommon project:
 1. Make sure you have [**setup the dependencies.**](#dependencies)
 2. **Download** this repository and setup git inside of it by using `git init`.
-  - It is **not recommended** to clone/fork this repository, as the example project-specific files will conflict.
+    - It is **not recommended** to clone/fork this repository, as the example project-specific files will conflict.
 3. Open and rename `ExampleMod.csproj` to configure the mod. The project file is where things like the mod name, authors, version, and further configuration goes.
 4. Restructure the source files as you see fit. All `.cs`, `.resx`, etc files will all be picked up and automatically compiled.
 5. Further configuration can be done in the project file just like as you would any other MSBuild project.
