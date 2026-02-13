@@ -1,0 +1,7 @@
+<Project>
+    <PropertyGroup>
+        <!-- Clean up the output -->
+        <BaseOutputPath>out/bin/</BaseOutputPath>
+        <BaseIntermediateOutputPath>out/obj/</BaseIntermediateOutputPath>
+    </PropertyGroup>
+</Project>

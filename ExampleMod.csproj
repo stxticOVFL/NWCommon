@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <!-- The name of the mod -->
+        <NWName>ExampleMod</NWName>
+        <NWAuthor>You</NWAuthor>
+        <NWVersion>1.0.0</NWVersion>
+        <!-- The name of the *DLL* -->
+        <AssemblyName>$(NWName)</AssemblyName>
+
+        <!-- Root namespace of the mod -->
+        <RootNamespace>$(AssemblyName)</RootNamespace>
+
+        <!-- The folder to copy the DLL to, e.g. Mods or Plugins -->
+        <NWOutput Condition="'$(NWOutput)' == ''">
+            Mods
+        </NWOutput>
+        <!-- Whether or not to add NeonLite as a reference. Either true or false. Looks in NWDir/Mods -->
+        <NWNeonLite Condition="'$(NWNeonLite)' == ''">
+            true
+        </NWNeonLite>
+        <!-- Whether or not to add UniverseLib as a reference. Either true or false.
+             Looks in NWDir/Mods and NWDir/UserLibs -->
+        <NWUniLib Condition="'$(NWUniLib)' == ''">
+            false
+        </NWUniLib>
+
+        <!-- Whether or not to fill in the assembly info for you. This should usually be true.
+             This also controls GenerateAssemblyInfo -->
+        <NWAssembly Condition="'$(NWAssembly)' == ''">
+            true
+        </NWAssembly>
+        <!-- The name of the class that inherits the relevant Melon class, relative to the root namespace.
+             Usually this matches the name of the root namespace.
+             Only used if NWAssembly is on -->
+        <NWMelonClass>$(RootNamespace)</NWMelonClass>
+        <!-- The author color to show in the log. #RRGGBB.
+             Only used if NWAssembly is on -->
+        <NWAuthorColor>#FFFFFF</NWAuthorColor>
+    </PropertyGroup>
+
+    <Import Project="NWCommon.props" />
+
+    <!-- Non-NWCommon properties, items, etc go here -->
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>12.0</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Add further references by using $(NWManaged) and $(NWDirectory): -->
+        <!-- <Reference Include="$(NWManaged)/Unity.InputSystem.dll" Private="false" /> -->
+    </ItemGroup>
+</Project>
