@@ -119,6 +119,7 @@
         <Company>$(NWAuthor)</Company>
         <!-- replace the + if they want to follow neonlite's system -->
         <Version>$(NWVersion.Replace('+', '.'))</Version>
+        <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
         <InformationalVersion>$(NWVersion)</InformationalVersion>
 
         <AssemblyTitle>$(NWName)</AssemblyTitle>
