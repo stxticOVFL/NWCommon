@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
     <PropertyGroup>
         <!-- The name of the mod -->
         <NWName>ExampleMod</NWName>
@@ -54,4 +54,6 @@
         <!-- Add further references by using $(NWManaged) and $(NWDirectory): -->
         <!-- <Reference Include="$(NWManaged)/Unity.InputSystem.dll" Private="false" /> -->
     </ItemGroup>
+
+    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 </Project>
