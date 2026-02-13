@@ -16,8 +16,8 @@ To build a NWCommon project:
 1. Make sure you have [**setup the dependencies.**](#dependencies)
 2. Copy `NWConfig.props.base` to `NWConfig.props` and configure it to match your setup.
 3. Run `dotnet build -v d`, which will build the project and copy it directly to your Neon White directory as configured in `NWConfig.props`.
-  - You can also open the project in Visual Studio on Windows and build from there. 
-  - To build a release build, run `dotnet build -c Release -v d`.
+    - You can also open the project in Visual Studio on Windows and build from there. 
+    - To build a release build, run `dotnet build -c Release -v d`.
 
 ## Development
 
@@ -28,8 +28,8 @@ To setup a new NWCommon project:
 3. Open and rename `ExampleMod.csproj` to configure the mod. The project file is where things like the mod name, authors, version, and further configuration goes.
 4. Restructure the source files as you see fit. All `.cs`, `.resx`, etc files will all be picked up and automatically compiled.
 5. Further configuration can be done in the project file just like as you would any other MSBuild project.
-  - This includes adding new references, as commented in the project file.
-  - **Do not use Visual Studio to further configure the project.** This may disrupt the project file and will make it harder for other contributors to use.
-    - If you are using Visual Studio to work on the project and it needs configuring, **unload the project and edit the project file manually.** 
+    - This includes adding new references, as commented in the project file.
+    - **Do not use Visual Studio to further configure the project.** This may disrupt the project file and will make it harder for other contributors to use.
+      - If you are using Visual Studio to work on the project and it needs configuring, **unload the project and edit the project file manually.** 
 6. Follow the [building instructions](#building) to build and publish your project.
-  - Make sure to setup a repository (GitHub, GitLab, etc) for easy viewing of source code for speedrun.com verification!
+    - Make sure to setup a repository (GitHub, GitLab, etc) for easy viewing of source code for speedrun.com verification!
