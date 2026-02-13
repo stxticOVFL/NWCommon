@@ -10,6 +10,8 @@ This project supports at least .NET 8.0 out of the box, and utilizes its SDK. So
 - macOS: [Download the SDK.](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) 
 - Linux: Follow the instructions on [how to get the .NET SDK](https://learn.microsoft.com/en-us/dotnet/core/install/linux) for your distro.
 
+Neon White must be setup with [MelonLoader 0.6.1.](https://melonwiki.xyz/#/)
+**Additionally,** some projects may need either [**NeonLite**](https://github.com/Faustas156/NeonLite) or [**UniverseLib Mono.**](https://github.com/sinai-dev/UniverseLib/releases/tag/1.5.1) Install those into your Neon White as normal.
 ## Building
 
 To build a NWCommon project:
