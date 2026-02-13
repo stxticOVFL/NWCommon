@@ -42,7 +42,7 @@
 
     </PropertyGroup>
 
-    <Import Project="NWCommon.props" />
+    <Import Project="NWCommon.targets" />
 
     <!-- Non-NWCommon properties, items, etc go here -->
     <PropertyGroup>
