@@ -33,9 +33,13 @@
              Usually this matches the name of the root namespace.
              Only used if NWAssembly is on -->
         <NWMelonClass>$(RootNamespace)</NWMelonClass>
+        <!-- The color to show in the log for the project. #RRGGBB.
+             Only used if NWAssembly is on -->
+        <NWColor>#FFFFFF</NWColor>
         <!-- The author color to show in the log. #RRGGBB.
              Only used if NWAssembly is on -->
         <NWAuthorColor>#FFFFFF</NWAuthorColor>
+
     </PropertyGroup>
 
     <Import Project="NWCommon.props" />
