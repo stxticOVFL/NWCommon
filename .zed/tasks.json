@@ -49,7 +49,7 @@
   },
   {
     "label": "Rebuild (Release)",
-    "command": "dotnet clean && dotnet build -v d",
+    "command": "dotnet clean && dotnet -c Release -v d",
     //"args": [],
     //"cwd": "/path/to/working/directory",
     "use_new_terminal": false,
