@@ -16,7 +16,7 @@ Neon White must be setup with [MelonLoader 0.6.1.](https://melonwiki.xyz/#/)
 
 To build a NWCommon project:
 1. Make sure you have [**setup the dependencies.**](#dependencies)
-2. Copy `NWConfig.props.base` to `NWConfig.props` and configure it to match your setup.
+2. Copy `NWConfig.props.base` to a new file `NWConfig.props` and configure it to match your setup.
 3. Run `dotnet build -v d`, which will build the project and copy it directly to your Neon White directory as configured in `NWConfig.props`.
     - You can also open the project in Visual Studio on Windows and build from there. 
     - To build a release build, run `dotnet build -c Release -v d`.
