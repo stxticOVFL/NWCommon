@@ -40,6 +40,12 @@
              Only used if NWAssembly is on -->
         <NWAuthorColor>#FFFFFF</NWAuthorColor>
 
+        <!-- A path to Unity scripts to additionally compile. Useful for mods with independent UIs.
+             Editor scripts are skipped.
+             Leave empty if no Unity scripts. Advanced users only! -->
+        <NWUnityScripts>
+
+        </NWUnityScripts>
     </PropertyGroup>
 
     <Import Project="NWCommon.targets" />

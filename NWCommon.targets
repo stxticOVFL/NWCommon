@@ -20,6 +20,8 @@
         <NWAuthor>$(NWAuthor.Trim())</NWAuthor>
         <NWVersion>$(NWVersion.Trim())</NWVersion>
 
+        <NWUnityScripts>$(NWUnityScripts.Trim())</NWUnityScripts>
+
         <BaseOutputPath>out/bin/</BaseOutputPath>
         <BaseIntermediateOutputPath>out/obj/</BaseIntermediateOutputPath>
     </PropertyGroup>
@@ -47,6 +49,11 @@
     <ItemGroup>
         <Compile Remove="UnityProject/**/*.cs" />
         <None Remove="UnityProject/**/*" />
+    </ItemGroup>
+    <!-- HOWEVER if we EXPLICITLY define UnityScripts support... -->
+    <ItemGroup Condition="'$(NWUnityScripts)' == ''">
+        <Compile Add="$(NWUnityScripts)/**/*.cs" />
+        <Compile Remove="$(NWUnityScripts)/**/Editor/**/*.cs" />
     </ItemGroup>
 
     <Target Name="ValidateProperties" BeforeTargets="BeforeBuild">
