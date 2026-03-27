@@ -51,7 +51,7 @@
         <None Remove="UnityProject/**/*" />
     </ItemGroup>
     <!-- HOWEVER if we EXPLICITLY define UnityScripts support... -->
-    <ItemGroup Condition="'$(NWUnityScripts)' == ''">
+    <ItemGroup Condition="'$(NWUnityScripts)' != ''">
         <Compile Include="$(NWUnityScripts)/**/*.cs" />
         <Compile Remove="$(NWUnityScripts)/**/Editor/**/*.cs" />
     </ItemGroup>
