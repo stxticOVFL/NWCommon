@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ExampleMod.Modules
 {
     // This is an example template module that does nothing but print things to log every few seconds.
-    // Check NeonLite/Modules/IModule.cs for more information.
+    // Check NeonLite/Modules/Public/Module.cs for more information.
     // Make sure to remove the wrapped #if false when you copy this!
 #if false
     internal class ExampleModule : MonoBehaviour, IModule
