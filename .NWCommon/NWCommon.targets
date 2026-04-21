@@ -1,8 +1,8 @@
 <Project>
     <!-- you shouldn't have to look in here unless you're working on NWCommon itself -->
 
-    <Import Project="NWConfig.props" Condition="Exists('NWConfig.props')" />
-    <Import Project="NWConfig.props.base" Condition="!Exists('NWConfig.props')" />
+    <Import Project="../NWConfig.props" Condition="Exists('../NWConfig.props')" />
+    <Import Project="../NWConfig.props.base" Condition="!Exists('../NWConfig.props')" />
 
     <PropertyGroup>
         <NWDirectory>$(NWDirectory.Trim())</NWDirectory>
@@ -45,13 +45,28 @@
     </PropertyGroup>
 
 
-    <!-- For projects that use Unity they usually don't want to compile alongside the mod -->
     <ItemGroup>
+        <!-- For projects that use Unity they usually don't want to compile alongside the mod -->
         <Compile Remove="UnityProject/**/*.cs" />
         <None Remove="UnityProject/**/*" />
+
+        <Compile Remove=".NWCommon/**/*.cs"/>
+        <None Remove=".NWCommon/**/*"/>
+
+        <Compile Remove="Resources/**/*.cs" />
+        <None Remove="Resources/**/*" />
+        <EmbeddedResource Include="Resources/**/*" Exclude="@(EmbeddedResource)" />
+
+        <CompilerVisibleProperty Include="RootNamespace"/>
+        <CompilerVisibleProperty Include="MSBuildProjectDirectory"/>
+        <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="SourceItemGroup"/>
+
+        <ProjectReference Include=".NWCommon/NWCGenerators.csproj"
+                OutputItemType="Analyzer"
+                ReferenceOutputAssembly="false" />
     </ItemGroup>
     <!-- HOWEVER if we EXPLICITLY define UnityScripts support... -->
-    <ItemGroup Condition="'$(NWUnityScripts)' == ''">
+    <ItemGroup Condition="'$(NWUnityScripts)' != ''">
         <Compile Include="$(NWUnityScripts)/**/*.cs" />
         <Compile Remove="$(NWUnityScripts)/**/Editor/**/*.cs" />
     </ItemGroup>
@@ -69,6 +84,11 @@
             Text="NWXbox is not set! Assuming Steam build."
             Condition="'$(NWXbox)' == ''"
         />
+
+        <ItemGroup>
+            <AdditionalFiles Include="@(EmbeddedResource)" SourceItemGroup="NWCResource"
+                Condition="$([System.String]::new('%(RelativeDir)').StartsWith('Resources'))" />
+        </ItemGroup>
     </Target>
 
     <!-- Basic references -->
@@ -107,6 +127,12 @@
 
     <PropertyGroup Condition="'$(NWXbox)' == 'true'">
         <DefineConstants>$(DefineConstants);XBOX</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <DebugType>embedded</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <EmbedAllSources>true</EmbedAllSources>
     </PropertyGroup>
 
     <Target Name="MoveDLL" AfterTargets="AfterBuild" Condition="Exists('$(TargetDir)$(TargetName).dll') And Exists('$(NWDirectory)') And '$(NWCopy)' == 'true'">
