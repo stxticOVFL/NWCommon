@@ -1,3 +1,6 @@
+using NeonLite.Modules;
+using UnityEngine;
+
 namespace ExampleMod.Modules
 {
     // This is an example template module that does nothing but print things to log every few seconds.
